@@ -1,0 +1,57 @@
+# Maven
+target/
+*/target/
+*.jar
+*.war
+*.ear
+
+# Java
+*.class
+*.log
+hs_err_pid*
+replay_pid*
+
+# Eclipse
+.metadata/
+.settings/
+.classpath
+.project
+*/.settings/
+*/.classpath
+*/.project
+
+# IntelliJ IDEA
+.idea/
+*.iml
+*.iws
+*.ipr
+
+# VS Code
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Environment and local configuration
+.env
+.env.*
+!.env.example
+application-local.yml
+application-local.yaml
+application-local.properties
+*/src/main/resources/application-local.yml
+*/src/main/resources/application-local.yaml
+*/src/main/resources/application-local.properties
+
+# Docker/local runtime data
+docker-compose.override.yml
+logs/
+*.pid
+
+# Test and coverage output
+coverage/
+surefire-reports/
+failsafe-reports/
+
