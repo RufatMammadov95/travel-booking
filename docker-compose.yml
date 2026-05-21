@@ -1,7 +1,9 @@
 services:
     discovery-service:
         image: ${DOCKER_REGISTRY:-travel-booking}/discovery-service:${IMAGE_TAG:-latest}
-        build: ./discovery-service
+        build:
+            context: .
+            dockerfile: discovery-service/Dockerfile
         ports:
             - "8761:8761"
         healthcheck:
@@ -12,7 +14,9 @@ services:
 
     api-gateway:
         image: ${DOCKER_REGISTRY:-travel-booking}/api-gateway:${IMAGE_TAG:-latest}
-        build: ./api-gateway
+        build:
+            context: .
+            dockerfile: api-gateway/Dockerfile
         ports:
             - "8080:8080"
         depends_on:
@@ -26,7 +30,9 @@ services:
 
     flight-service:
         image: ${DOCKER_REGISTRY:-travel-booking}/flight-service:${IMAGE_TAG:-latest}
-        build: ./flight-service
+        build:
+            context: .
+            dockerfile: flight-service/Dockerfile
         ports:
             - "8081:8081"
         depends_on:
@@ -40,7 +46,9 @@ services:
 
     hotel-service:
         image: ${DOCKER_REGISTRY:-travel-booking}/hotel-service:${IMAGE_TAG:-latest}
-        build: ./hotel-service
+        build:
+            context: .
+            dockerfile: hotel-service/Dockerfile
         ports:
             - "8082:8082"
         depends_on:
@@ -54,7 +62,9 @@ services:
 
     car-rental-service:
         image: ${DOCKER_REGISTRY:-travel-booking}/car-rental-service:${IMAGE_TAG:-latest}
-        build: ./car-rental-service
+        build:
+            context: .
+            dockerfile: car-rental-service/Dockerfile
         ports:
             - "8083:8083"
         depends_on:
