@@ -1,0 +1,3 @@
+com\travel\gateway\ApiGatewayApplication.class
+com\travel\gateway\MyFallbackProvider.class
+com\travel\gateway\MyFallbackProvider$1.class

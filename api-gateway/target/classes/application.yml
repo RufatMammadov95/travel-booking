@@ -1,0 +1,27 @@
+server:
+    port: 8080
+
+spring:
+    application:
+        name: api-gateway
+
+eureka:
+    client:
+        service-url:
+            defaultZone: http://discovery-service:8761/eureka/
+
+zuul:
+    prefix: /api
+    routes:
+        flight-service:
+            path: /flights/**
+            serviceId: flight-service
+            strip-prefix: false
+        hotel-service:
+            path: /hotels/**
+            serviceId: hotel-service
+            strip-prefix: false
+        car-rental-service:
+            path: /car-rentals/**
+            serviceId: car-rental-service
+            strip-prefix: false
